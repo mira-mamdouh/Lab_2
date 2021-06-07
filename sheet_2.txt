@@ -1,0 +1,244 @@
+___________________________________________________________________________________________________________________________________________________
+Name:- Mira Mamdouh Mounir          Group:- G2
+_______________________________________________                                                                      
+                                                            
+    									sheet2
+								_________________________
+								  _____________________
+								     _______________
+
+(1)
+
+seconds = 111222333  # example 
+
+h = (seconds/60/60) 
+m = (h-int(h))*60
+s = (m - int(m))*60
+print(f'{h:.0f} {m:.0f} {s:.0f}')
+
+________________________________________________________
+_____________________________________________________
+_________________________________________________
+
+(2)
+
+#include <stdio.h>
+
+int main (void){
+    float f,c;
+printf("Grad Celsius =");
+        scanf("%f",&c);
+        f=(c*1.8)+32;
+        printf("%.2f Grad Celsius sind %.2f Grad Fahrenheit\n",c,f);
+ return 0;
+} 
+
+
+__________________________________________________________
+______________________________________________________
+___________________________________________________
+
+(4)
+
+#include <stdio.h>
+int main() {
+    int base, exp;
+    long long result = 1;
+    printf("Enter a base number: ");
+    scanf("%d", &base);
+    printf("Enter an exponent: ");
+    scanf("%d", &exp);
+
+    while (exp != 0) {
+        result *= base;
+        --exp;
+    }
+    printf("Answer = %lld", result);
+    return 0;
+}
+
+
+__________________________________________________________
+______________________________________________________
+__________________________________________________
+
+(5) 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int is_prime_number(unsigned int number){
+        if(number <= 1){
+                return 0;
+        }
+        for(unsigned int devisor=2; devisor < number/2; devisor++){
+                if(number % devisor == 0){
+                        return 0;
+                }
+        }
+        return 1;
+}
+
+int main(int argc, char *argv[]){
+        unsigned int num = 97;
+        if( argc > 1){
+                num =  atoi(argv[1]);
+        }
+        printf("%d is %s\n", num, is_prime_number(num) ? "prime number": "non prime numebr");
+        return 0;
+}
+
+
+_________________________________________________________
+______________________________________________________
+__________________________________________________
+
+(6)
+
+#include <stdio.h>
+void main()
+{
+int A[50][50],B[50][50],C[50][50],i,j,k,r,s;
+int m,n;
+printf("How many rows and columns for first matrix\n");
+scanf("%d%d",&m,&n);
+printf("How many rows and columns for second matrix\n");
+scanf("%d%d",&r,&s);
+if(m!=r)
+printf("\n The matrix cannot multiplied");
+else
+{
+printf("\n Enter the elements of first matrix ");
+for(i= 0;i<m;i++)
+{
+for(j=0;j<n;j++)
+scanf("\t%d",&A[i][j]);
+}
+printf("\n Enetr the elements of second matrix ");
+for(i=0;i<m;i++)
+{
+for(j=0;j<n;j++)
+scanf("\t%d",&B[i][j]);
+}
+printf("\n The element of first matrix is");
+for(i=0;i<m;i++)
+{
+printf("\n");
+for(j=0;j<n;j++)
+printf("\t%d",A[i][j]);
+}
+printf("\n The element of second matrix is");
+for(i=0;i<m;i++)
+{
+printf("\n");
+for(j=0;j<n;j++)
+printf("\t%d",B[i][j]);
+}
+for(i=0;i<m;i++)
+{
+printf("\n");
+for(j=0;j<n;j++)
+{
+C[i][j]=0;
+for(k=0;k<m;k++)
+C[i][j]=C[i][j]+A[i][k]*B[k][j];
+}
+}
+}
+printf("\n Multiplication of two matrix is");
+for(i=0;i<m;i++)
+{
+printf("\n");
+for(j=0;j<n;j++)
+printf("\t%d",C[i][j]);
+}
+}
+
+
+_________________________________________________________
+_____________________________________________________
+__________________________________________________
+
+7)
+
+1.
+
+#!/bin/bash
+
+echo -n "Enter number : "
+read n
+ 
+# store single digit
+sd=0
+ 
+# store number in reverse order
+rev=""
+ 
+# store original number
+on=$n
+ 
+# use while loop to caclulate the sum of all digits
+while [ $n -gt 0 ]
+do
+    sd=$(( $n % 10 )) # get Remainder 
+    n=$(( $n / 10 ))  # get next digit
+    # store previoues number and current digit in rev
+    rev=$( echo ${rev}${sd} ) 
+done
+ 
+echo  "$on in a reverse order $rev" 
+
+
+_________________________________________________
+
+2.
+
+#!/bin/bash
+
+echo -n "Enter number : "
+read n
+ 
+# store single digit
+sd=0
+ 
+# store number of digit 
+sum=0
+ 
+# use while loop to caclulate the sum of all digits
+while [ $n -gt 0 ]
+do
+    sd=$(( $n % 10 )) # get Remainder 
+    n=$(( $n / 10 ))  # get next digit
+    sum=$(( $sum + $sd )) # calculate sum of digit
+done
+echo  "Sum of all digit  is $sum"
+
+
+___________________________________________________
+
+3.
+
+#!/bin/bash
+
+echo -n "Enter number : "
+read n
+ 
+sd=0
+ 
+# store number of digit 
+nd=0
+on=$n # store $n so that we can use it later
+ 
+# use while loop to caclulate the number of digit
+while [ $n -gt 0 ]
+do
+    sd=$(( $n % 10 )) # get Remainder 
+    n=$(( $n / 10 )) 
+    nd=$(( $nd + 1)) # calculate all digit in a number till n is not zero
+done
+echo  "Numnber of digit in a $on is $nd"
+
+
+
+__________________________________________________________________________________________________________________________________________________
+
